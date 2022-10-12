@@ -3,13 +3,13 @@ import { ReactComponent as PlaySvg } from 'assets/circle-play.svg'
 import { ReactComponent as PauseSvg } from 'assets/circle-pause.svg'
 
 type PlayerProps = {
-	playableAudio: { audio: string, title: string }
+	audioTrack: { audio: string, title: string, img: string }
 }
 
-export const Player: FC<PlayerProps> = ({ playableAudio }) => {
+export const Player: FC<PlayerProps> = ({ audioTrack }) => {
 
 	const [play, setPlay] = useState(false)
-	const [audio] = useState(new Audio(playableAudio.audio))
+	const [audio] = useState(new Audio(audioTrack.audio))
 	audio.loop = true
 
 	const onSetPlay = () => {
@@ -21,16 +21,20 @@ export const Player: FC<PlayerProps> = ({ playableAudio }) => {
 		setPlay(!play)
 	}
 
+	console.log(audioTrack.img)
+
 	return (
 		<>
-			<div>
-				<h3>{playableAudio.title}</h3>
+			<div
+				style={{backgroundImage: `url(${audioTrack.img})`, backgroundSize: 'cover'}}
+				className='border border-amber-300 rounded'>
+				<h3 className='text-3xl text-amber-50'>{audioTrack.title}</h3>
 				<button onClick={onSetPlay}>
 					{play
 						?
-						<PauseSvg className='w-10 h-10' />
+						<PauseSvg className='w-10 h-10 fill-amber-50' />
 						:
-						<PlaySvg className='w-10 h-10' />}
+						<PlaySvg className='w-10 h-10 fill-amber-50' />}
 				</button>
 			</div>
 		</>

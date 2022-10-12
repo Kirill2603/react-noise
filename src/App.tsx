@@ -3,7 +3,7 @@ import { AudioGrid } from './components/AudioGrid'
 
 export const App = () => {
 	return (
-		<div className='text-2xl'>
+		<div className='w-screen h-screen'>
 			<AudioGrid />
 		</div>
 	)
