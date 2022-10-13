@@ -1,6 +1,4 @@
 import { FC, useState } from 'react'
-import { ReactComponent as PlaySvg } from 'assets/circle-play.svg'
-import { ReactComponent as PauseSvg } from 'assets/circle-pause.svg'
 
 type PlayerProps = {
 	audioTrack: { audio: string, title: string, img: string }
@@ -21,22 +19,19 @@ export const Player: FC<PlayerProps> = ({ audioTrack }) => {
 		setPlay(!play)
 	}
 
-	console.log(audioTrack.img)
-
 	return (
-		<>
-			<div
-				style={{backgroundImage: `url(${audioTrack.img})`, backgroundSize: 'cover'}}
-				className='border border-amber-300 rounded'>
-				<h3 className='text-3xl text-amber-50'>{audioTrack.title}</h3>
-				<button onClick={onSetPlay}>
-					{play
-						?
-						<PauseSvg className='w-10 h-10 fill-amber-50' />
-						:
-						<PlaySvg className='w-10 h-10 fill-amber-50' />}
-				</button>
+		<div onClick={onSetPlay}
+				 className={`${play ? 'shadow-xl shadow-neutral-500 ring-4  ring-gray-700' : ''} 
+				 rounded-3xl hover:ring-2 ring-gray-700 cursor-pointer overflow-hidden`}>
+			<div className={`w-full h-full`}
+					 style={{ backgroundImage: `url(${audioTrack.img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+				<h3 className={`
+				${play ? 'backdrop-saturate-150 backdrop-blur-0 text-shadow shadow-neutral-900' : 'backdrop-blur-sm'}
+				hover:text-shadow shadow-black text-4xl text-cyan-50 
+				font-bold flex flex-col text-center justify-center h-full drop-shadow-2xl shadow-neutral-50 `}>
+					{audioTrack.title}
+				</h3>
 			</div>
-		</>
+		</div>
 	)
 }

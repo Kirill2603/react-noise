@@ -54,7 +54,7 @@ export const AudioGrid = () => {
 	]
 
 	return (
-		<main className='grid grid-cols-3 gap-2 w-full h-full'>
+		<main className='grid grid-cols-5 gap-5 p-5 w-full h-full'>
 			{audios.map(audio =>
 				<Player key={audio.title} audioTrack={audio} />
 			)}
