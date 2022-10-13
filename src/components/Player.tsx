@@ -1,22 +1,36 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 type PlayerProps = {
 	audioTrack: { audio: string, title: string, img: string }
+	ambients: Array<{ title: string, volume: number }> | []
+	onSetAmbient: (title: string) => void
 }
 
-export const Player: FC<PlayerProps> = ({ audioTrack }) => {
+export const Player: FC<PlayerProps> = ({ audioTrack, ambients, onSetAmbient }) => {
 
 	const [play, setPlay] = useState(false)
 	const [audio] = useState(new Audio(audioTrack.audio))
 	audio.loop = true
 
+
+
+
 	const onSetPlay = () => {
-		if (play) {
-			audio.pause()
-		} else if (!play) {
+		// if (ambients.length === 3) {
+		// 	return
+		// }
+		if (!ambients.find(ambient => ambient.title === audioTrack.title)) {
+			onSetAmbient(audioTrack.title)
+			setPlay(true)
 			audio.play()
 		}
-		setPlay(!play)
+		if (!!ambients.find(ambient => ambient.title === audioTrack.title) || ambients.length === 3) {
+			onSetAmbient(audioTrack.title)
+			setPlay(false)
+			audio.pause()
+		}
+
+
 	}
 
 	return (

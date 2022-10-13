@@ -1,9 +1,8 @@
 .volumeControl {
-    @apply w-44 h-9 appearance-none overflow-hidden outline-0 m-2
+    @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2
 }
 
 .volumeControl {
-    /*box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);*/
     @apply appearance-none outline-0 overflow-hidden rounded-2xl bg-white bg-opacity-25 shadow-inset-sm
 }
 

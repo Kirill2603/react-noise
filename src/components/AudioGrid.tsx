@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Player } from './Player'
 import {
 	cat,
@@ -31,7 +31,12 @@ import {
 	forestRiverImg
 } from '../assets/images'
 
-export const AudioGrid = () => {
+type AudioGridProps = {
+	onSetAmbient: (title: string) => void
+	ambients: Array<{title: string, volume: number}> | []
+}
+
+export const AudioGrid: FC<AudioGridProps> = ({ambients, onSetAmbient}) => {
 
 	const audios: Array<{audio: string, title: string, img: string}> = [
 		{ audio: cat, title: 'Cat', img: catImg },
@@ -56,7 +61,7 @@ export const AudioGrid = () => {
 	return (
 		<main className='grid grid-cols-5 gap-5 p-5 w-full h-full'>
 			{audios.map(audio =>
-				<Player key={audio.title} audioTrack={audio} />
+				<Player key={audio.title} audioTrack={audio} ambients={ambients} onSetAmbient={onSetAmbient}/>
 			)}
 		</main>
 	)
