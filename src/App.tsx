@@ -20,6 +20,7 @@ export const App = () => {
 			if (!ambients.find(ambient => ambient.title === title) && ambients.length < 3) {
 				setAmbients([...ambients, {title, volume: 1} ])
 			}
+
 		},
 		[ambients],
 	);
