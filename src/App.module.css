@@ -1,3 +1,3 @@
 .app {
-    @apply bg-neutral-800 w-screen h-screen
+    @apply bg-neutral-800 w-screen h-screen flex flex-col
 }

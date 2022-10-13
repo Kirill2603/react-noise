@@ -1,0 +1,11 @@
+.header {
+    @apply p-5 text-2xl font-bold text-amber-50 flex flex-row items-center
+}
+
+.button {
+    @apply w-20 h-20
+}
+
+.buttonSvg {
+    @apply fill-amber-200
+}
