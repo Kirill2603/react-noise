@@ -21,7 +21,6 @@ export const App = () => {
 				setAmbients([...ambients, {title, volume: 1} ])
 			}
 		},
-
 		[ambients]
 	);
 
