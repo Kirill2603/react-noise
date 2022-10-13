@@ -32,7 +32,6 @@ export const Player: FC<PlayerProps> = ({ audioTrack }) => {
 					{audioTrack.title}
 				</h3>
 			</div>
-
 		</div>
 	)
 }
