@@ -1,34 +1,23 @@
-import React, { useCallback, useState } from 'react'
-import { AudioGrid } from './components/AudioGrid'
-import styles from './App.module.css'
-import { Header } from './components/Header'
+import React, { useCallback } from 'react'
+import { useAppDispatch } from './store/store'
+import { toggleTrack, TrackType } from './store/playerSlice'
+import { Header, TracksGrid } from './components'
+
 
 export const App = () => {
 
-	type initialPlayType = Array<{title: string, volume: number}> | []
+	const dispatch = useAppDispatch()
 
-	const [ambients, setAmbients] = useState<initialPlayType>([])
-
-	const onSetAmbient = useCallback(
-		(title: string) => {
-			if (ambients.length >= 3) {
-				setAmbients(ambients.filter(ambient => ambient.title !== title))
-			}
-			if (ambients.find(ambient => ambient.title === title)) {
-				setAmbients(ambients.filter(ambient => ambient.title !== title))
-			}
-			if (!ambients.find(ambient => ambient.title === title) && ambients.length < 3) {
-				setAmbients([...ambients, {title, volume: 1} ])
-			}
-		},
-		[ambients]
-	);
+	const onSetTrack = useCallback(
+		(track: TrackType) => {
+			dispatch(toggleTrack(track))
+		}, [dispatch]
+	)
 
 	return (
-		<div className={styles.app}>
-			{/*{ambients && ambients.map(ambient => <div className='text-amber-50' key={ambient.title}>{ambient.title}</div>)}*/}
+		<>
 			<Header />
-			<AudioGrid onSetAmbient={onSetAmbient} ambients={ambients}/>
-		</div>
+			<TracksGrid onSetTrack={onSetTrack} />
+		</>
 	)
 }
