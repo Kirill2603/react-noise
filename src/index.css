@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+    @apply bg-neutral-700 flex flex-col w-screen h-screen text-2xl text-neutral-200
+}

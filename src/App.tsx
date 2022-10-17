@@ -3,7 +3,6 @@ import { useAppDispatch } from './store/store'
 import { toggleTrack, TrackType } from './store/playerSlice'
 import { Header, TracksGrid } from './components'
 
-
 export const App = () => {
 
 	const dispatch = useAppDispatch()

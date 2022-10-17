@@ -1,0 +1,11 @@
+.trackControl {
+    @apply flex flex-col items-center
+}
+
+.volumeControl {
+    @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2 appearance-none outline-0 overflow-hidden rounded-2xl bg-white bg-opacity-25 shadow-inset-sm
+}
+
+.volumeControl::-webkit-slider-thumb {
+    @apply appearance-none w-0 h-0 cursor-pointer shadow-volume shadow-white
+}
