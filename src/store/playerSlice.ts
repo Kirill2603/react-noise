@@ -45,7 +45,7 @@ const initialState: InitialState = {
 		{ audio: heavyRain, title: 'Heavy rain', volume: 0.5, img: heavyRainImg },
 		{ audio: rainThunder, title: 'Rain thunder', volume: 0.5, img: rainThunderImg },
 		{ audio: airport, title: 'Airport', volume: 0.5, img: airportImg },
-		{ audio: nightForestCicadas, title: 'Night forest cicadas', volume: 0.5, img: nightForestCicadasImg },
+		{ audio: nightForestCicadas, title: 'Night forest', volume: 0.5, img: nightForestCicadasImg },
 		{ audio: waterfall, title: 'Waterfall', volume: 0.5, img: waterfallImg },
 		{ audio: forestRiver, title: 'Forest river', volume: 0.5, img: forestRiverImg }
 	]

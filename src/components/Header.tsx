@@ -25,7 +25,6 @@ export const Header: FC<HeaderProps> = () => {
 		<header className='flex flex-row p-5'>
 			<PlayButton isPlay={isPlay} onSetPlay={onSetPlay}/>
 			<MasterVolume masterVolume={masterVolume} onSetMasterVolume={onSetMasterVolume}/>
-			{/*{playNow.map(track => <TrackControl isPlay={isPlay} masterVolume={masterVolume} key={track.title + 'pn'} track={track} />)}*/}
 			{playNow[0] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[0]} /> : <EmptyControl />}
 			{playNow[1] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[1]} /> : <EmptyControl />}
 			{playNow[2] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[2]} /> : <EmptyControl />}

@@ -12,7 +12,7 @@ export const TracksGrid: FC<TracksGridProps> = ({ onSetTrack }) => {
 	const { tracks, playNow } = useAppSelector(state => state.player)
 
 	return (
-		<main className='grid grid-cols-5 w-full h-full gap-5 p-5'>
+		<main className='grid grid-cols-5 w-full h-full gap-5 px-5 pb-5'>
 				{tracks.map(track => <TrackCover key={track.title} track={track} playNow={playNow} onSetPlay={onSetTrack}/>)}
 		</main>
 	)

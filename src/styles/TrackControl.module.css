@@ -1,5 +1,5 @@
 .trackControl {
-    @apply flex flex-col items-start
+    @apply flex flex-col items-start px-3
 }
 
 .trackControl span {
