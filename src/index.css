@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 #root {
-    @apply bg-neutral-700 flex flex-col w-screen h-screen text-2xl text-neutral-200
+    @apply  flex flex-col w-screen h-screen text-2xl text-neutral-200
+}
+body {
+    @apply bg-neutral-700
 }
