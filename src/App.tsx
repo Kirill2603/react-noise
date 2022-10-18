@@ -14,9 +14,9 @@ export const App = () => {
 	)
 
 	return (
-		<>
-			<Header />
-			<TracksGrid onSetTrack={onSetTrack} />
-		</>
+			<>
+				<Header />
+				<TracksGrid onSetTrack={onSetTrack} />
+			</>
 	)
 }
