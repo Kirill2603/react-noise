@@ -36,17 +36,17 @@ const initialState: InitialState = {
 	playNow: [],
 	tracks: [
 		{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
-		{ audio: meadow, title: 'Meadow', volume: 0.5, img: meadowImg },
-		{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg },
 		{ audio: cicadas, title: 'Cicadas', volume: 0.5, img: cicadasImg },
-		{ audio: train, title: 'Train', volume: 0.5, img: trainImg },
 		{ audio: rain, title: 'Rain', volume: 0.5, img: rainImg },
-		{ audio: rainRoof, title: 'Rain roof', volume: 0.5, img: rainRoofImg },
-		{ audio: heavyRain, title: 'Heavy rain', volume: 0.5, img: heavyRainImg },
+		{ audio: train, title: 'Train', volume: 0.5, img: trainImg },
+		{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg },
 		{ audio: rainThunder, title: 'Rain thunder', volume: 0.5, img: rainThunderImg },
 		{ audio: airport, title: 'Airport', volume: 0.5, img: airportImg },
-		{ audio: nightForestCicadas, title: 'Night forest', volume: 0.5, img: nightForestCicadasImg },
 		{ audio: waterfall, title: 'Waterfall', volume: 0.5, img: waterfallImg },
+		{ audio: meadow, title: 'Meadow', volume: 0.5, img: meadowImg },
+		{ audio: rainRoof, title: 'Rain roof', volume: 0.5, img: rainRoofImg },
+		{ audio: heavyRain, title: 'Heavy rain', volume: 0.5, img: heavyRainImg },
+		{ audio: nightForestCicadas, title: 'Night forest', volume: 0.5, img: nightForestCicadasImg },
 		{ audio: forestRiver, title: 'Forest river', volume: 0.5, img: forestRiverImg }
 	]
 }

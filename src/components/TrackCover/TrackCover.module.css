@@ -1,0 +1,15 @@
+.trackCover {
+    @apply w-full h-full rounded-3xl overflow-hidden cursor-pointer bg-cover bg-center
+}
+
+.activeCover {
+    @apply shadow shadow-cover shadow-cyan-400 ease-in duration-150
+}
+
+.trackText {
+    @apply w-full h-full flex justify-center items-center text-4xl font-bold opacity-80 backdrop-blur-sm
+}
+
+.activeText {
+    @apply backdrop-blur-0 text-cyan-100 text-shadow-lg shadow-cyan-400 opacity-100 ease-in duration-100
+}

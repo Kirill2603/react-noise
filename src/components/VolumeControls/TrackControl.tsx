@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
-import { useAppDispatch } from '../store/store'
-import { setVolume, TrackType } from '../store/playerSlice'
-import styles from 'styles/TrackControl.module.css'
+import { useAppDispatch } from 'store/store'
+import { setVolume, TrackType } from 'store/playerSlice'
+import styles from './VulumeControls.module.css'
 
 type TrackCoverProps = {
 	masterVolume: number
@@ -14,6 +14,10 @@ export const TrackControl: FC<TrackCoverProps> = ({ masterVolume, track, isPlay 
 	const dispatch = useAppDispatch()
 	const [audio] = useState(new Audio(track.audio))
 
+	const onSetVolume = (value: string) => {
+		dispatch(setVolume({ ...track, volume: Number(value) }))
+	}
+
 	useEffect(() => {
 		if (isPlay) {
 			audio.play()
@@ -25,10 +29,6 @@ export const TrackControl: FC<TrackCoverProps> = ({ masterVolume, track, isPlay 
 		audio.volume = track.volume * masterVolume
 		return () => audio.pause()
 	}, [audio, track, isPlay, masterVolume])
-
-	const onSetVolume = (value: string) => {
-		dispatch(setVolume({ ...track, volume: Number(value) }))
-	}
 
 	return (
 		<div className={styles.trackControl}>

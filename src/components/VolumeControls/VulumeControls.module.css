@@ -13,3 +13,7 @@
 .volumeControl::-webkit-slider-thumb {
     @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow-volume shadow-white
 }
+
+.emptyControl {
+    @apply w-44 h-8 border border-amber-50 border-dashed rounded-3xl m-2
+}

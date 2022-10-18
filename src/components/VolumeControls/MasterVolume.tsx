@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styles from 'styles/TrackControl.module.css'
+import styles from './VulumeControls.module.css'
 
 type MasterVolumeProps = {
 	masterVolume: number

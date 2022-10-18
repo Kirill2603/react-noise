@@ -1,0 +1,11 @@
+.playButton {
+    @apply w-20 h-20
+}
+
+.svg {
+    @apply fill-neutral-200
+}
+
+.disabled {
+    @apply opacity-60
+}
