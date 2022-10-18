@@ -8,17 +8,16 @@
 
 .volumeControl {
     @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2
-    appearance-none overflow-hidden rounded-2xl bg-neutral-400
+    appearance-none overflow-hidden rounded-2xl bg-neutral-500
 
     shadow-inset-sm-light
     dark:shadow-inset-sm-dark
-    dark:bg-cyan-100
-
+    dark:bg-cyan-700
 }
 
 .volumeControl::-webkit-slider-thumb {
     @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow shadow-volume shadow-cyan-500
-    dark:shadow-cyan-100
+    dark:shadow-cyan-300
 }
 
 .emptyControl {

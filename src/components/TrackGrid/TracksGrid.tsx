@@ -14,7 +14,7 @@ export const TracksGrid: FC<TracksGridProps> = ({ onSetTrack }) => {
 
 	return (
 		<main className={styles.tracksGrid}>
-			{tracks.map(track => <TrackCover key={track.title} track={track} playNow={playNow} onSetPlay={onSetTrack} />)}
+			{tracks.map(track => <TrackCover key={track.title + 'tk'} track={track} playNow={playNow} onSetTrack={onSetTrack} />)}
 		</main>
 	)
 }

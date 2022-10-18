@@ -7,7 +7,7 @@ type HeaderProps = {}
 
 export const Header: FC<HeaderProps> = () => {
 
-	const playNow = useAppSelector(state => state.player.playNow)
+	const { playNow } = useAppSelector(state => state.player)
 	const [isPlay, setIsPlay] = useState(true)
 	const [masterVolume, setMasterVolume] = useState(1)
 
@@ -19,13 +19,25 @@ export const Header: FC<HeaderProps> = () => {
 		setMasterVolume(volume)
 	}
 
+	let emptyList = [1, 2, 3].slice(0, 3 - playNow.length)
+	console.log(emptyList.length)
+
 	return (
 		<header className={styles.header}>
-			<PlayButton isPlay={isPlay} onSetPlay={onSetPlay} playNow={playNow} />
-			<MasterVolume masterVolume={masterVolume} onSetMasterVolume={onSetMasterVolume} />
-			{playNow[0] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[0]} /> : <EmptyControl />}
-			{playNow[1] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[1]} /> : <EmptyControl />}
-			{playNow[2] ? <TrackControl isPlay={isPlay} masterVolume={masterVolume} track={playNow[2]} /> : <EmptyControl />}
+			<PlayButton
+				isPlay={isPlay}
+				onSetPlay={onSetPlay}
+				playNow={playNow} />
+			<MasterVolume
+				masterVolume={masterVolume}
+				onSetMasterVolume={onSetMasterVolume} />
+			{playNow.map(track =>
+				<TrackControl
+					key={track.title + 'h'} isPlay={isPlay}
+					masterVolume={masterVolume}
+					track={track} />)}
+			{emptyList.map((empty, index) =>
+				<EmptyControl key={index + 'e'} />)}
 		</header>
 	)
 }
