@@ -3,7 +3,7 @@
 }
 
 .svg {
-    @apply fill-neutral-200
+    @apply fill-cyan-500 dark:fill-neutral-200
 }
 
 .disabled {

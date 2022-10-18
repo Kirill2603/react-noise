@@ -7,13 +7,20 @@
 }
 
 .volumeControl {
-    @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2 appearance-none outline-0 overflow-hidden rounded-2xl bg-white bg-opacity-25 shadow-inset-sm
+    @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2
+    appearance-none overflow-hidden rounded-2xl bg-neutral-400
+
+    shadow-inset-sm-light
+    dark:shadow-inset-sm-dark
+    dark:bg-cyan-100
+
 }
 
 .volumeControl::-webkit-slider-thumb {
-    @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow-volume shadow-white
+    @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow shadow-volume shadow-cyan-500
+    dark:shadow-cyan-100
 }
 
 .emptyControl {
-    @apply w-44 h-8 border border-amber-50 border-dashed rounded-3xl m-2
+    @apply w-44 h-8 border border-dashed rounded-3xl m-2 border-cyan-500 dark:border-cyan-50
 }

@@ -7,6 +7,7 @@ type HeaderProps = {}
 
 export const Header: FC<HeaderProps> = () => {
 
+
 	const playNow = useAppSelector(state => state.player.playNow)
 	const [isPlay, setIsPlay] = useState(true)
 	const [masterVolume, setMasterVolume] = useState(1)
