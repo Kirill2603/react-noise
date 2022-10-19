@@ -107,12 +107,15 @@ export const playerSlice = createSlice({
 			state.playNow = state.playNow.map(track => track.title === action.payload.title ? action.payload : track)
 		},
 		setPreset: (state, action: PayloadAction<string>) => {
-			state.playNow = state.presets[action.payload]
+			state.playNow = state.presets[action.payload] ||  state.userPresets[action.payload]
 		},
 		savePreset: (state, action: PayloadAction<{ preset: TrackType[] , title: string }>) => {
 			state.userPresets = { [action.payload.title]: [...action.payload.preset], ...state.userPresets }
+		},
+		deletePreset: (state, action: PayloadAction<{presetName: string}>) => {
+			delete state.userPresets[action.payload.presetName]
 		}
 	}
 })
 
-export const { toggleTrack, setVolume, setPreset, savePreset } = playerSlice.actions
+export const { toggleTrack, setVolume, setPreset, savePreset, deletePreset } = playerSlice.actions

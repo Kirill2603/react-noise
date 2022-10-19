@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
-import { useAppDispatch } from 'store/store'
+import { useAppDispatch } from 'store'
 import { setVolume, TrackType } from 'store/playerSlice'
 import styles from './VulumeControls.module.css'
 

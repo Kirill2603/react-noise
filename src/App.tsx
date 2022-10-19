@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
-import { useAppDispatch } from './store/store'
-import { toggleTrack, TrackType } from './store/playerSlice'
-import { Header, TracksGrid } from './components'
+import { useAppDispatch } from 'store'
+import { toggleTrack, TrackType } from 'store/playerSlice'
+import { Header, TracksGrid } from 'components'
 
 export const App = () => {
 

@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useState } from 'react'
 import { EmptyControl, TrackControl, PlayButton, MasterVolume, PresetsModal } from 'components'
-import { useAppSelector } from 'store/store'
+import { useAppSelector } from 'store'
 import styles from './Header.module.css'
 
 
@@ -8,7 +8,7 @@ type HeaderProps = {}
 
 export const Header: FC<HeaderProps> = () => {
 
-	const { playNow } = useAppSelector(state => state.player)
+	const playNow = useAppSelector(state => state.player.playNow)
 	const [isPlay, setIsPlay] = useState(true)
 	const [masterVolume, setMasterVolume] = useState(1)
 	const [isOpenPresets, setIsOpenPresets] = useState(false)

@@ -9,6 +9,7 @@
 .presetTitle {
     @apply text-2xl
 }
+
 .tracksList {
     @apply flex flex-row text-xl
 }

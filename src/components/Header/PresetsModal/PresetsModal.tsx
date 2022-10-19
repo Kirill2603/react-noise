@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { AddPreset } from 'components/index'
-import styles from './PresetsModal.module.css'
+import { AddPreset } from 'components'
 import { PresetsList } from './PresetsList/PresetsList'
-import { useAppSelector } from '../../../store/store'
+import { useAppSelector } from 'store'
+import styles from './PresetsModal.module.css'
 
 
 type PresetsModalProps = {

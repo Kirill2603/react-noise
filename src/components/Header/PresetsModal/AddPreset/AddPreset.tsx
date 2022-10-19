@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../../../store/store'
-import { savePreset } from '../../../../store/playerSlice'
+import { useAppDispatch, useAppSelector } from 'store'
+import { savePreset } from 'store/playerSlice'
 import styles from './AddPreset.module.css'
 
 export const AddPreset = () => {
@@ -10,7 +10,7 @@ export const AddPreset = () => {
 	const [presetName, setPresetName] = useState<string>('')
 
 	const onSavePreset = () => {
-		if (playNow.length !== 0) {
+		if (playNow.length !== 0 && presetName) {
 			dispatch(savePreset({ preset: playNow, title: presetName }))
 		}
 	}
