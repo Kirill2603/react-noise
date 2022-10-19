@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/*#root {*/
+/*    @apply flex flex-col text-2xl text-neutral-800 dark:text-neutral-200*/
+/*}*/
+/*body {*/
+/*    @apply bg-neutral-100 dark:bg-gray-900 w-screen h-screen*/
+/*}*/
+
 #root {
-    @apply  flex flex-col w-screen h-screen text-2xl text-neutral-800 dark:text-neutral-200
-}
-body {
-    @apply bg-neutral-100 dark:bg-gray-900
+    @apply flex flex-col text-2xl
 }

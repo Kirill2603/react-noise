@@ -1,25 +1,27 @@
 .trackControl {
-    @apply flex flex-col items-start px-3
+    @apply flex flex-col items-start px-2 w-full
 }
 
 .trackControl span {
-    @apply px-5 text-xl font-bold
+    @apply text-xl font-bold px-3
 }
 
 .volumeControl {
-    @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2
-    appearance-none overflow-hidden rounded-2xl bg-gray-200
+    @apply w-48 h-8 appearance-none overflow-hidden outline-0
+    rounded-2xl bg-gray-50
     shadow-inset-sm-light
     dark:shadow-inset-sm-dark
     dark:bg-gray-900
+    sm:w-full
 }
 
 .volumeControl::-webkit-slider-thumb {
-    @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow shadow-volume opacity-100 shadow-gray-500 dark:shadow-gray-100
+    @apply appearance-none w-0 h-0 cursor-pointer shadow shadow-volume opacity-100 shadow-gray-700 dark:shadow-gray-100
 }
 
+
 .emptyControl {
-    @apply w-44 h-8 border border-dashed rounded-3xl m-2 border-cyan-500 dark:border-cyan-50
+    @apply w-48 h-8 border border-dashed rounded-3xl border-gray-500 sm:w-full
 }
 
 .Cat::-webkit-slider-thumb {

@@ -10,9 +10,9 @@ export const MasterVolume: FC<MasterVolumeProps> = ({ masterVolume, onSetMasterV
 
 	return (
 		<div className={styles.trackControl}>
-			<span>Master volume</span>
+			<span>Volume</span>
 			<input
-				className={styles.volumeControl}
+				className={`${styles.volumeControl} ${styles.masterControl}`}
 				type='range'
 				min={0}
 				max={1}

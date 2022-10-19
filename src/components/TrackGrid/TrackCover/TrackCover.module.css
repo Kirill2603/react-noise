@@ -1,16 +1,68 @@
 .trackCover {
-    @apply w-full h-full rounded-3xl overflow-hidden cursor-pointer bg-cover bg-center
+    @apply w-64 h-64 rounded-3xl overflow-hidden cursor-pointer bg-cover bg-center m-3
+    sm:w-40 sm:h-40 md:w-44 md:h-44
 }
 
 .activeCover {
-    @apply shadow shadow-cover ease-in duration-150
+    @apply shadow shadow-cover ease-in duration-150 ring-8 ring-white
 }
 
 .trackText {
-    @apply w-full h-full flex justify-center items-center text-4xl font-bold opacity-80 backdrop-blur-sm
+    @apply w-full h-full flex justify-center text-center items-center text-4xl font-bold opacity-80 backdrop-blur-md rounded-3xl
 }
 
 .activeText {
-    @apply backdrop-blur-0 text-cyan-100 text-shadow-lg  opacity-100 ease-in duration-100
+    @apply backdrop-blur-none text-cyan-100 text-shadow-lg  opacity-100 ease-in duration-100
 }
 
+.Cat {
+    @apply  ring-yellow-700
+}
+
+.Cicadas {
+    @apply  ring-green-800
+}
+
+.Rain {
+    @apply  ring-teal-200
+}
+
+.Train {
+    @apply  ring-teal-500
+}
+
+.Fireplace {
+    @apply  ring-orange-500
+}
+
+.Thunder {
+    @apply  ring-cyan-500
+}
+
+.Airport {
+    @apply  ring-teal-400
+}
+
+.Waterfall {
+    @apply  ring-green-700
+}
+
+.Meadow {
+    @apply  ring-green-400
+}
+
+.Rainroof {
+    @apply  ring-cyan-300
+}
+
+.Heavyrain {
+    @apply  ring-indigo-300
+}
+
+.Nightforest {
+    @apply  ring-slate-400
+}
+
+.Forestriver {
+    @apply ring-lime-500
+}

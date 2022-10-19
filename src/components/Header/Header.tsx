@@ -29,22 +29,24 @@ export const Header: FC<HeaderProps> = () => {
 
 	return (
 		<header className={styles.header}>
-			<div className={styles.volumeBlock}>
-				<PlayButton
-					isPlay={isPlay}
-					onSetPlay={onSetPlay}
-					playNow={playNow} />
-				<MasterVolume
-					masterVolume={masterVolume}
-					onSetMasterVolume={onSetMasterVolume} />
-				{playNow.map(track =>
-					<TrackControl
-						key={track.title + 'h'} isPlay={isPlay}
+				<div className={styles.masterControl}>
+					<PlayButton
+						isPlay={isPlay}
+						onSetPlay={onSetPlay}
+						playNow={playNow} />
+					<MasterVolume
 						masterVolume={masterVolume}
-						track={track} />)}
-				{emptyList.map((empty, index) =>
-					<EmptyControl key={index + 'e'} />)}
-			</div>
+						onSetMasterVolume={onSetMasterVolume} />
+				</div>
+				<div className={styles.volumeBlock}>
+					{playNow.map(track =>
+						<TrackControl
+							key={track.title + 'h'} isPlay={isPlay}
+							masterVolume={masterVolume}
+							track={track} />)}
+					{emptyList.map((empty, index) =>
+						<EmptyControl key={index + 'e'} />)}
+				</div>
 			<button className={styles.presetsButton} onClick={onTogglePresetsModal}>Presets</button>
 			{isOpenPresets && <PresetsModal setIsOpenPresets={onTogglePresetsModal} />}
 		</header>

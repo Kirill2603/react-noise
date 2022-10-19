@@ -38,22 +38,6 @@ interface InitialState {
 	tracks: TrackType[]
 }
 
-export const coverColors: { [key: string]: string } = {
-	'Cat': 'shadow-yellow-700',
-	'Cicadas': 'shadow-green-800',
-	'Rain': 'shadow-teal-200',
-	'Train': 'shadow-teal-500',
-	'Fireplace': 'shadow-orange-500',
-	'Thunder': 'shadow-cyan-500',
-	'Airport': 'shadow-teal-400',
-	'Waterfall': 'shadow-green-700',
-	'Meadow': 'shadow-green-400',
-	'Rain roof': 'shadow-cyan-300',
-	'Heavy rain': 'shadow-indigo-300',
-	'Night forest': 'shadow-slate-400',
-	'Forest river': 'shadow-lime-500'
-}
-
 const initialState: InitialState = {
 	playNow: [],
 	presets: {

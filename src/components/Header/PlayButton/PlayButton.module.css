@@ -1,9 +1,9 @@
 .playButton {
-    @apply w-20 h-20
+    @apply w-20 h-20 min-w-fit
 }
 
 .svg {
-    @apply fill-gray-500 dark:fill-gray-200
+    @apply fill-gray-700 dark:fill-gray-200
 }
 
 .disabled {
