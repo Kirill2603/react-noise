@@ -1,3 +1,14 @@
 .header {
-    @apply flex flex-row p-5
+    @apply flex flex-row p-5 justify-between items-center
+}
+
+.volumeBlock {
+    @apply flex flex-row
+}
+
+.presetsButton {
+    @apply font-bold text-gray-800 px-5 py-2 h-fit rounded-3xl
+    dark:bg-gray-200
+    hover:ring-2 ring-cyan-500
+    active:bg-gray-400
 }

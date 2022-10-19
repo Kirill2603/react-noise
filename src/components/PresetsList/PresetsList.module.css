@@ -1,0 +1,70 @@
+.presetsList {
+    @apply py-3 cursor-pointer
+}
+
+.preset {
+    @apply flex flex-row justify-between py-2 hover:border-b
+}
+
+.presetTitle {
+    @apply text-2xl
+}
+.tracksList {
+    @apply flex flex-row text-xl
+}
+
+.trackTitle {
+    @apply  rounded-2xl px-3 mx-2
+}
+
+.Cat {
+    @apply bg-yellow-700
+}
+
+.Cicadas {
+    @apply bg-green-800
+}
+
+.Rain {
+    @apply bg-teal-200
+}
+
+.Train {
+    @apply bg-teal-500
+}
+
+.Fireplace {
+    @apply bg-orange-500
+}
+
+.Thunder {
+    @apply bg-cyan-500
+}
+
+.Airport {
+    @apply bg-teal-400
+}
+
+.Waterfall {
+    @apply bg-green-700
+}
+
+.Meadow {
+    @apply bg-green-400
+}
+
+.Rainroof {
+    @apply bg-cyan-300
+}
+
+.Heavyrain {
+    @apply bg-indigo-300
+}
+
+.Nightforest {
+    @apply bg-slate-400
+}
+
+.Forestriver {
+    @apply bg-lime-500
+}

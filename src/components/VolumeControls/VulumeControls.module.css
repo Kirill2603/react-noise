@@ -8,18 +8,68 @@
 
 .volumeControl {
     @apply w-44 h-8 appearance-none overflow-hidden outline-0 m-2
-    appearance-none overflow-hidden rounded-2xl bg-neutral-500
-
+    appearance-none overflow-hidden rounded-2xl bg-gray-200
     shadow-inset-sm-light
     dark:shadow-inset-sm-dark
-    dark:bg-cyan-700
+    dark:bg-gray-900
 }
 
 .volumeControl::-webkit-slider-thumb {
-    @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow shadow-volume shadow-cyan-500
-    dark:shadow-cyan-300
+    @apply appearance-none w-0 h-0 ml-1.5 cursor-pointer shadow shadow-volume opacity-100 shadow-gray-500 dark:shadow-gray-100
 }
 
 .emptyControl {
     @apply w-44 h-8 border border-dashed rounded-3xl m-2 border-cyan-500 dark:border-cyan-50
+}
+
+.Cat::-webkit-slider-thumb {
+    @apply shadow-yellow-700
+}
+
+.Cicadas::-webkit-slider-thumb {
+    @apply shadow-green-800
+}
+
+.Rain::-webkit-slider-thumb {
+    @apply shadow-teal-200
+}
+
+.Train::-webkit-slider-thumb {
+    @apply shadow-teal-500
+}
+
+.Fireplace::-webkit-slider-thumb {
+    @apply shadow-orange-500
+}
+
+.Thunder::-webkit-slider-thumb {
+    @apply shadow-cyan-500
+}
+
+.Airport::-webkit-slider-thumb {
+    @apply shadow-teal-400
+}
+
+.Waterfall::-webkit-slider-thumb {
+    @apply shadow-green-700
+}
+
+.Meadow::-webkit-slider-thumb {
+    @apply shadow-green-400
+}
+
+.Rainroof::-webkit-slider-thumb {
+    @apply shadow-cyan-300
+}
+
+.Heavyrain::-webkit-slider-thumb {
+    @apply shadow-indigo-300
+}
+
+.Nightforest::-webkit-slider-thumb {
+    @apply shadow-slate-400
+}
+
+.Forestriver::-webkit-slider-thumb {
+    @apply shadow-lime-500
 }

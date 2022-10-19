@@ -29,18 +29,53 @@ export type TrackType = {
 
 interface InitialState {
 	playNow: TrackType[],
+	presets: {
+		[key:string] : TrackType[]
+	},
 	tracks: TrackType[]
+}
+
+export const coverColors: { [key: string]: string } = {
+	'Cat': 'shadow-yellow-700',
+	'Cicadas': 'shadow-green-800',
+	'Rain': 'shadow-teal-200',
+	'Train': 'shadow-teal-500',
+	'Fireplace': 'shadow-orange-500',
+	'Thunder': 'shadow-cyan-500',
+	'Airport': 'shadow-teal-400',
+	'Waterfall': 'shadow-green-700',
+	'Meadow': 'shadow-green-400',
+	'Rain roof': 'shadow-cyan-300',
+	'Heavy rain': 'shadow-indigo-300',
+	'Night forest': 'shadow-slate-400',
+	'Forest river': 'shadow-lime-500'
 }
 
 const initialState: InitialState = {
 	playNow: [],
+	presets: {
+		"Home" :[
+			{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
+			{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg }
+		],
+		"Rain": [
+			{ audio: rain, title: 'Rain', volume: 0.5, img: rainImg },
+			{ audio: rainRoof, title: 'Rain roof', volume: 0.4, img: rainRoofImg },
+			{ audio: rainThunder, title: 'Thunder', volume: 0.7, img: rainThunderImg }
+		],
+		"Field": [
+			{ audio: meadow, title: 'Meadow', volume: 0.7, img: meadowImg },
+			{ audio: cicadas, title: 'Cicadas', volume: 0.7, img: cicadasImg },
+			{ audio: forestRiver, title: 'Forest river', volume: 0.2, img: forestRiverImg }
+		]
+	},
 	tracks: [
 		{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
 		{ audio: cicadas, title: 'Cicadas', volume: 0.5, img: cicadasImg },
 		{ audio: rain, title: 'Rain', volume: 0.5, img: rainImg },
 		{ audio: train, title: 'Train', volume: 0.5, img: trainImg },
 		{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg },
-		{ audio: rainThunder, title: 'Rain thunder', volume: 0.5, img: rainThunderImg },
+		{ audio: rainThunder, title: 'Thunder', volume: 0.5, img: rainThunderImg },
 		{ audio: airport, title: 'Airport', volume: 0.5, img: airportImg },
 		{ audio: waterfall, title: 'Waterfall', volume: 0.5, img: waterfallImg },
 		{ audio: meadow, title: 'Meadow', volume: 0.5, img: meadowImg },
@@ -64,8 +99,14 @@ export const playerSlice = createSlice({
 		},
 		setVolume: (state, action: PayloadAction<TrackType>) => {
 			state.playNow = state.playNow.map(track => track.title === action.payload.title ? action.payload : track)
+		},
+		setPreset: (state, action: PayloadAction<string>) => {
+			state.playNow = state.presets[action.payload]
+		},
+		savePreset: (state, action: PayloadAction<{ preset: TrackType[] , title: string }>) => {
+			state.presets = { ...state.presets, [action.payload.title]: [...action.payload.preset] }
 		}
 	}
 })
 
-export const { toggleTrack, setVolume } = playerSlice.actions
+export const { toggleTrack, setVolume, setPreset, savePreset } = playerSlice.actions

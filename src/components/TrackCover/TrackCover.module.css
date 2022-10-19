@@ -3,7 +3,7 @@
 }
 
 .activeCover {
-    @apply shadow shadow-cover shadow-cyan-400 ease-in duration-150
+    @apply shadow shadow-cover ease-in duration-150
 }
 
 .trackText {
@@ -11,5 +11,6 @@
 }
 
 .activeText {
-    @apply backdrop-blur-0 text-cyan-100 text-shadow-lg shadow-cyan-400 opacity-100 ease-in duration-100
+    @apply backdrop-blur-0 text-cyan-100 text-shadow-lg  opacity-100 ease-in duration-100
 }
+

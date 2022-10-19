@@ -34,7 +34,7 @@ export const TrackControl: FC<TrackCoverProps> = ({ masterVolume, track, isPlay 
 		<div className={styles.trackControl}>
 			<span>{track.title}</span>
 			<input
-				className={styles.volumeControl}
+				className={`${styles.volumeControl} ${styles[track.title.split(' ').join('')]}`}
 				type='range'
 				min={0}
 				max={1}
