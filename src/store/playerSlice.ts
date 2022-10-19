@@ -32,6 +32,9 @@ interface InitialState {
 	presets: {
 		[key:string] : TrackType[]
 	},
+	userPresets: {
+		[key:string] : TrackType[]
+	}
 	tracks: TrackType[]
 }
 
@@ -69,6 +72,9 @@ const initialState: InitialState = {
 			{ audio: forestRiver, title: 'Forest river', volume: 0.2, img: forestRiverImg }
 		]
 	},
+	userPresets: {
+
+	},
 	tracks: [
 		{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
 		{ audio: cicadas, title: 'Cicadas', volume: 0.5, img: cicadasImg },
@@ -104,7 +110,7 @@ export const playerSlice = createSlice({
 			state.playNow = state.presets[action.payload]
 		},
 		savePreset: (state, action: PayloadAction<{ preset: TrackType[] , title: string }>) => {
-			state.presets = { ...state.presets, [action.payload.title]: [...action.payload.preset] }
+			state.userPresets = { [action.payload.title]: [...action.payload.preset], ...state.userPresets }
 		}
 	}
 })

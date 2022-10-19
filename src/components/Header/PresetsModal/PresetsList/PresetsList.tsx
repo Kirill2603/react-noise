@@ -1,17 +1,20 @@
-import React from 'react'
-import { useAppDispatch, useAppSelector } from 'store/store'
-import { setPreset } from '../../store/playerSlice'
+import React, { FC } from 'react'
 import styles from './PresetsList.module.css'
+import { useAppDispatch } from 'store/store'
+import { setPreset, TrackType } from 'store/playerSlice'
 
+type PresetListProps = {
+	type: 'user' | 'base'
+	presets: { [key: string]: TrackType[] }
+}
 
-export const PresetsList = () => {
+export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 
 	const dispatch = useAppDispatch()
-	const { presets } = useAppSelector(state => state.player)
 	const presetsMap = []
 
-	for (const presetsKey in presets) {
-		presetsMap.push(presetsKey)
+	for (const presetKey in presets) {
+		presetsMap.push(presetKey)
 	}
 
 	const onSelectPreset = (name: string) => {
@@ -19,7 +22,7 @@ export const PresetsList = () => {
 	}
 
 	return (
-		<div className={styles.presetsList}>
+		<div>
 			{presetsMap.map(preset =>
 				<div
 					onClick={() => onSelectPreset(preset)}

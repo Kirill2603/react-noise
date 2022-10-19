@@ -1,12 +1,18 @@
 import React, { FC } from 'react'
-import { PresetsList, AddPreset } from 'components'
+import { AddPreset } from 'components/index'
 import styles from './PresetsModal.module.css'
+import { PresetsList } from './PresetsList/PresetsList'
+import { useAppSelector } from '../../../store/store'
+
 
 type PresetsModalProps = {
 	setIsOpenPresets: () => void
 }
 
 export const PresetsModal: FC<PresetsModalProps> = ({ setIsOpenPresets }) => {
+
+	const { presets, userPresets } = useAppSelector(state => state.player)
+
 	return (
 		<div className={styles.presetsModal}>
 			<div className={styles.modalHeader}>
@@ -14,7 +20,8 @@ export const PresetsModal: FC<PresetsModalProps> = ({ setIsOpenPresets }) => {
 				<button onClick={setIsOpenPresets}>x</button>
 			</div>
 			<AddPreset />
-			<PresetsList />
+			<PresetsList presets={userPresets} type={'user'} />
+			<PresetsList presets={presets} type={'base'} />
 		</div>
 	)
 }
