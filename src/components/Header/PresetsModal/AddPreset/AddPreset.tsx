@@ -20,6 +20,7 @@ export const AddPreset = () => {
 		if (playNow.length !== 0 && presetName !== '') {
 			dispatch(savePreset({ preset: playNow, title: presetName }))
 			setInputError(null)
+			setPresetName('')
 		}
 	}
 

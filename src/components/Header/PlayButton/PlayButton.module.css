@@ -1,5 +1,5 @@
 .playButton {
-    @apply w-20 h-20 min-w-fit
+    @apply w-20 h-20 min-w-fit mr-3 mt-2 sm:mr-1
 }
 
 .svg {

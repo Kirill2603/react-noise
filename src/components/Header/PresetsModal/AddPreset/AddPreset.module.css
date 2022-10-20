@@ -2,6 +2,7 @@
     @apply flex flex-row justify-between rounded-3xl overflow-hidden ring-1 ring-gray-800
     hover:ring-2 hover:ring-gray-400
     focus:ring-cyan-400
+    dark:ring-gray-200
 }
 
 .error {
@@ -14,8 +15,11 @@
 
 .addPresetInput {
     @apply w-full text-gray-900 p-1 outline-0 pl-3 bg-gray-200 focus:bg-gray-50
+    dark:bg-gray-800 dark:focus:bg-gray-900
+    dark:text-gray-100
 }
 
 .addPresetButton {
     @apply bg-gray-800 text-gray-100 font-bold px-4 hover:bg-gray-700 active:bg-gray-500
+    dark:bg-gray-200 dark:text-gray-800
 }

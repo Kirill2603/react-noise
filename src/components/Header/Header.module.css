@@ -1,5 +1,6 @@
 .header {
-    @apply flex flex-row w-full justify-between items-center sm:fixed md:fixed px-5 z-30 bg-gray-100
+    @apply flex flex-row w-full justify-between items-center sm:fixed md:fixed px-5 z-30 bg-gray-100 py-2
+    dark:bg-gray-800
 }
 
 .masterControl {
@@ -8,12 +9,14 @@
 
 .volumeBlock {
     @apply relative z-20 flex flex-row w-full bg-gray-100 px-3 mx-3 justify-start
-    sm:fixed sm:top-20 sm:left-0 sm:justify-between sm:m-0 sm:pb-2 sm:px-0
-    md:fixed md:top-20 md:left-0 md:justify-start md:pb-2
+    sm:fixed sm:top-24 sm:left-0 sm:justify-start sm:m-0 sm:pb-2 sm:px-0
+    md:fixed md:top-24 md:left-0 md:justify-start md:pb-2
+    dark:bg-gray-800
 }
 
 .presetsButton {
-    @apply font-bold text-gray-100 rounded-3xl px-3 py-2 bg-gray-700 ring-4 ring-gray-400
+    @apply font-bold text-gray-100 rounded-3xl px-3 py-2 bg-gray-800 ring-4 ring-gray-400
     hover:ring-gray-600
     active:bg-gray-300
+    dark:text-gray-800 dark:bg-gray-200
 }
