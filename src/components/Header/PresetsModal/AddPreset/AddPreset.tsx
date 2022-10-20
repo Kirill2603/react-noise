@@ -24,8 +24,6 @@ export const AddPreset = () => {
 		}
 	}
 
-	console.log(inputError)
-
 	return (
 		<>
 			<div className={`${styles.addPreset} ${inputError && styles.error}`}>

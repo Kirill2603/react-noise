@@ -1,6 +1,6 @@
 .trackCover {
     @apply w-64 h-64 rounded-3xl overflow-hidden cursor-pointer bg-cover bg-center m-3
-    sm:w-40 sm:h-40 md:w-44 md:h-44
+    sm:w-36 sm:h-36 md:w-44 md:h-44 sm:m-1
 }
 
 .activeCover {
