@@ -79,3 +79,16 @@
 .Forestriver::-webkit-slider-thumb {
     @apply shadow-lime-500
 }
+
+
+.Piano::-webkit-slider-thumb {
+    @apply shadow-amber-700
+}
+
+.Seawaves::-webkit-slider-thumb {
+    @apply shadow-teal-400
+}
+
+.Beach::-webkit-slider-thumb {
+    @apply shadow-blue-400
+}

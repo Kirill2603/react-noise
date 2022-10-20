@@ -11,6 +11,9 @@ import trainImg from './train.webp'
 import nightForestCicadasImg from './night-forest-campfire.webp'
 import waterfallImg from './waterfall.webp'
 import forestRiverImg from './forest-river.webp'
+import pianoImg from './piano.webp'
+import seaWavesImg from './seaWaves.webp'
+import beachImg from './beach.webp'
 
 export {
 	catImg,
@@ -25,5 +28,8 @@ export {
 	meadowImg,
 	nightForestCicadasImg,
 	waterfallImg,
-	forestRiverImg
+	forestRiverImg,
+	pianoImg,
+	seaWavesImg,
+	beachImg
 }

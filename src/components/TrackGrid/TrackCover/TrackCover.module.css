@@ -67,3 +67,15 @@
 .Forestriver {
     @apply ring-lime-500
 }
+
+.Piano {
+    @apply ring-amber-700
+}
+
+.Seawaves {
+    @apply ring-teal-400
+}
+
+.Beach {
+    @apply ring-blue-400
+}

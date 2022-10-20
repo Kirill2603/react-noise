@@ -1,25 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import {
-	airport,
+	airport, beach,
 	cat,
 	cicadas,
 	fireplace, forestRiver,
 	heavyRain,
 	meadow,
-	nightForestCicadas,
+	nightForestCicadas, piano,
 	rain,
 	rainRoof,
-	rainThunder,
+	rainThunder, seaWaves,
 	train, waterfall
 } from '../audios'
 import {
-	airportImg,
+	airportImg, beachImg,
 	catImg, cicadasImg,
 	fireplaceImg,
 	forestRiverImg, heavyRainImg,
-	meadowImg, nightForestCicadasImg,
+	meadowImg, nightForestCicadasImg, pianoImg,
 	rainImg, rainRoofImg,
-	rainThunderImg,
+	rainThunderImg, seaWavesImg,
 	trainImg, waterfallImg
 } from '../assets/images'
 
@@ -60,7 +60,10 @@ const initialState: InitialState = {
 	tracks: [
 		{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
 		{ audio: cicadas, title: 'Cicadas', volume: 0.5, img: cicadasImg },
+		{ audio: seaWaves, title: 'Sea waves', volume: 0.5, img: seaWavesImg },
+		{ audio: beach, title: 'Beach', volume: 0.5, img: beachImg },
 		{ audio: rain, title: 'Rain', volume: 0.5, img: rainImg },
+		{ audio: piano, title: 'Piano', volume: 0.5, img: pianoImg },
 		{ audio: train, title: 'Train', volume: 0.5, img: trainImg },
 		{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg },
 		{ audio: rainThunder, title: 'Thunder', volume: 0.5, img: rainThunderImg },
