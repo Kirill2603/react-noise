@@ -1,9 +1,9 @@
 .trackControl {
-    @apply flex flex-col items-start px-2 w-full
+    @apply flex flex-col items-start px-2 w-fit sm:w-full md:px-1 sm:px-1
 }
 
 .trackControl span {
-    @apply text-xl font-bold px-3
+    @apply text-xl font-bold px-3 whitespace-nowrap md:px-1 sm:px-1
 }
 
 .volumeControl {

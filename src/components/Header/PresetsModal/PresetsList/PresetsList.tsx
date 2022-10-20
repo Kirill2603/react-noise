@@ -27,7 +27,9 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 	}
 
 	return (
-		<>
+		<div className={styles.presetsList}>
+			<h3>{type === 'user' ? 'Yours presets' : 'Presets'}</h3>
+			{presetsMap.length === 0 && <span>No user presets saved</span>}
 			{presetsMap.map(preset =>
 				<ul
 					onClick={() => onSelectPreset(preset)}
@@ -49,6 +51,6 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 					</div>
 				</ul>)
 			}
-		</>
+		</div>
 	)
 }

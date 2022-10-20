@@ -1,9 +1,15 @@
 .presetsModal {
-    @apply fixed flex flex-col top-1/4 left-1/4 w-1/2 h-1/2 bg-gray-800 opacity-95 rounded-2xl z-20 px-5 py-2
+    @apply absolute top-0 left-0 w-screen h-screen overflow-auto z-30
+    flex flex-col  items-center backdrop-blur-md
+}
+
+.modalBody {
+    @apply relative w-fit h-fit bg-gray-200 opacity-100 rounded-2xl z-20 px-5 my-5
+    sm:w-fit sm:h-fit
 }
 
 .modalHeader {
-    @apply flex flex-row justify-between
+    @apply flex flex-row justify-between align-middle pb-4
 }
 
 .modalHeader span {

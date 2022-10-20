@@ -8,24 +8,38 @@ export const AddPreset = () => {
 	const playNow = useAppSelector(state => state.player.playNow)
 	const dispatch = useAppDispatch()
 	const [presetName, setPresetName] = useState<string>('')
+	const [inputError, setInputError] = useState<'Please select presets' | 'Please enter preset name' | null>()
 
 	const onSavePreset = () => {
-		if (playNow.length !== 0 && presetName) {
+		if (playNow.length === 0) {
+			setInputError('Please select presets')
+		}
+		if (!presetName) {
+			setInputError('Please enter preset name')
+		}
+		if (playNow.length !== 0 && presetName !== '') {
 			dispatch(savePreset({ preset: playNow, title: presetName }))
+			setInputError(null)
 		}
 	}
 
+	console.log(inputError)
+
 	return (
-		<div className={styles.addPreset}>
-			<input
-				className={styles.addPresetInput}
-				type='text'
-				value={presetName}
-				onChange={(event) => setPresetName(event.currentTarget.value)} />
-			<button
-				className={styles.addPresetButton}
-				onClick={onSavePreset}>Save
-			</button>
-		</div>
+		<>
+			<div className={`${styles.addPreset} ${inputError && styles.error}`}>
+				<input
+					className={styles.addPresetInput}
+					type='text'
+					placeholder='Name of your preset?'
+					value={presetName}
+					onChange={(event) => setPresetName(event.currentTarget.value)} />
+				<button
+					className={styles.addPresetButton}
+					onClick={onSavePreset}>Save
+				</button>
+			</div>
+			<span className={styles.errorLog}>{inputError}</span>
+		</>
 	)
 }

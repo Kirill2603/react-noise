@@ -30,10 +30,10 @@ export type TrackType = {
 interface InitialState {
 	playNow: TrackType[],
 	presets: {
-		[key:string] : TrackType[]
+		[key: string]: TrackType[]
 	},
 	userPresets: {
-		[key:string] : TrackType[]
+		[key: string]: TrackType[]
 	}
 	tracks: TrackType[]
 }
@@ -41,24 +41,22 @@ interface InitialState {
 const initialState: InitialState = {
 	playNow: [],
 	presets: {
-		"Home" :[
+		'Home': [
 			{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
 			{ audio: fireplace, title: 'Fireplace', volume: 0.5, img: fireplaceImg }
 		],
-		"Rain": [
+		'Rain': [
 			{ audio: rain, title: 'Rain', volume: 0.5, img: rainImg },
 			{ audio: rainRoof, title: 'Rain roof', volume: 0.4, img: rainRoofImg },
 			{ audio: rainThunder, title: 'Thunder', volume: 0.7, img: rainThunderImg }
 		],
-		"Field": [
+		'Field': [
 			{ audio: meadow, title: 'Meadow', volume: 0.7, img: meadowImg },
 			{ audio: cicadas, title: 'Cicadas', volume: 0.7, img: cicadasImg },
 			{ audio: forestRiver, title: 'Forest river', volume: 0.2, img: forestRiverImg }
 		]
 	},
-	userPresets: {
-
-	},
+	userPresets: {},
 	tracks: [
 		{ audio: cat, title: 'Cat', volume: 0.5, img: catImg },
 		{ audio: cicadas, title: 'Cicadas', volume: 0.5, img: cicadasImg },
@@ -91,12 +89,12 @@ export const playerSlice = createSlice({
 			state.playNow = state.playNow.map(track => track.title === action.payload.title ? action.payload : track)
 		},
 		setPreset: (state, action: PayloadAction<string>) => {
-			state.playNow = state.presets[action.payload] ||  state.userPresets[action.payload]
+			state.playNow = state.presets[action.payload] || state.userPresets[action.payload]
 		},
-		savePreset: (state, action: PayloadAction<{ preset: TrackType[] , title: string }>) => {
+		savePreset: (state, action: PayloadAction<{ preset: TrackType[], title: string }>) => {
 			state.userPresets = { [action.payload.title]: [...action.payload.preset], ...state.userPresets }
 		},
-		deletePreset: (state, action: PayloadAction<{presetName: string}>) => {
+		deletePreset: (state, action: PayloadAction<{ presetName: string }>) => {
 			delete state.userPresets[action.payload.presetName]
 		}
 	}

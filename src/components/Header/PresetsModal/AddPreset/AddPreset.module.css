@@ -1,11 +1,21 @@
 .addPreset {
-    @apply flex flex-row justify-between rounded-2xl overflow-hidden
+    @apply flex flex-row justify-between rounded-3xl overflow-hidden ring-1 ring-gray-800
+    hover:ring-2 hover:ring-gray-400
+    focus:ring-cyan-400
+}
+
+.error {
+    @apply ring-2 ring-red-500 hover:ring-red-600
+}
+
+.errorLog {
+    @apply text-base pl-5 text-red-500
 }
 
 .addPresetInput {
-    @apply w-full text-gray-900 p-1
+    @apply w-full text-gray-900 p-1 outline-0 pl-3 bg-gray-200 focus:bg-gray-50
 }
 
 .addPresetButton {
-    @apply bg-gray-200 text-gray-900 px-2
+    @apply bg-gray-800 text-gray-100 font-bold px-4 hover:bg-gray-700 active:bg-gray-500
 }
