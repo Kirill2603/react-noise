@@ -1,8 +1,8 @@
 .tracksGrid {
     /*@apply sm:pt-40 md:pt-40 flex flex-row flex-wrap justify-around*/
-    @apply pt-2 grid grid-cols-6 gap-5 px-5 w-3/4 m-auto
-    xl:grid-cols-5
-    lg:grid-cols-4
-    md:grid-cols-3 md:p-3 md:pt-44
-    sm:grid-cols-2 sm:p-2 sm:pt-44
+    @apply pt-2 grid grid-cols-5 gap-5 px-5 w-3/4 m-auto
+    xl:grid-cols-5 xl:w-full
+    lg:grid-cols-4 lg:w-full
+    md:grid-cols-3 md:p-3 md:pt-44 md:w-full
+    sm:grid-cols-2 sm:p-2 sm:pt-44 sm:w-full
 }
