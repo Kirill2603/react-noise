@@ -15,7 +15,9 @@ export const App = () => {
 
 	useEffect(() => {
 		const data = localStorage.getItem('userPresets') || 'asd'
-		dispatch(setPresetsFromLocalStorage(JSON.parse(data)))
+		if (data) {
+			dispatch(setPresetsFromLocalStorage(JSON.parse(data)))
+		}
 	}, [dispatch])
 
 	const onSetTrack = useCallback(
