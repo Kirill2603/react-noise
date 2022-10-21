@@ -82,3 +82,15 @@
 .Forestriver {
     @apply bg-lime-500
 }
+
+.Piano {
+    @apply bg-amber-700
+}
+
+.Seawaves {
+    @apply bg-teal-400
+}
+
+.Beach {
+    @apply bg-blue-400
+}

@@ -11,7 +11,7 @@ import {
 	rainRoof,
 	rainThunder, seaWaves,
 	train, waterfall
-} from '../audios'
+} from 'audios'
 import {
 	airportImg, beachImg,
 	catImg, cicadasImg,
@@ -21,7 +21,7 @@ import {
 	rainImg, rainRoofImg,
 	rainThunderImg, seaWavesImg,
 	trainImg, waterfallImg
-} from '../assets/images'
+} from 'assets/images'
 
 export type TrackType = {
 	audio: string, title: string, volume: number, img: string
@@ -99,8 +99,11 @@ export const playerSlice = createSlice({
 		},
 		deletePreset: (state, action: PayloadAction<{ presetName: string }>) => {
 			delete state.userPresets[action.payload.presetName]
+		},
+		setPresetsFromLocalStorage: (state, action: PayloadAction<{[key: string]: TrackType[]}>) => {
+			state.userPresets = action.payload
 		}
 	}
 })
 
-export const { toggleTrack, setVolume, setPreset, savePreset, deletePreset } = playerSlice.actions
+export const { toggleTrack, setVolume, setPreset, savePreset, deletePreset, setPresetsFromLocalStorage } = playerSlice.actions
