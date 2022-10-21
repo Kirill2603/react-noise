@@ -10,15 +10,15 @@ export const App = () => {
 	const userPresets = useAppSelector(state => state.player.userPresets)
 
 	window.onbeforeunload = () => {
-		localStorage.setItem('userPresets', JSON.stringify(userPresets))
+			localStorage.setItem('userPresets', JSON.stringify(userPresets))
 	}
 
 	useEffect(() => {
-		const data = localStorage.getItem('userPresets') || 'asd'
-		if (data) {
-			dispatch(setPresetsFromLocalStorage(JSON.parse(data)))
+		const localStoragePresets = localStorage.getItem('userPresets')
+		if (localStoragePresets) {
+			dispatch(setPresetsFromLocalStorage(JSON.parse(localStoragePresets)))
 		}
-	}, [dispatch])
+	}, [])
 
 	const onSetTrack = useCallback(
 		(track: TrackType) => {
