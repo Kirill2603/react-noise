@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from 'store'
+import { useAppDispatch } from 'store'
 import { setPresetsFromLocalStorage, toggleTrack, TrackType } from 'store/playerSlice'
 import { Header, TracksGrid } from 'components'
 
@@ -7,18 +7,12 @@ export const App = () => {
 
 	const dispatch = useAppDispatch()
 
-	const userPresets = useAppSelector(state => state.player.userPresets)
-
-	window.onbeforeunload = () => {
-			localStorage.setItem('userPresets', JSON.stringify(userPresets))
-	}
-
 	useEffect(() => {
 		const localStoragePresets = localStorage.getItem('userPresets')
 		if (localStoragePresets) {
 			dispatch(setPresetsFromLocalStorage(JSON.parse(localStoragePresets)))
 		}
-	}, [])
+	}, [dispatch])
 
 	const onSetTrack = useCallback(
 		(track: TrackType) => {

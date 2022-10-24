@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { AddPreset } from 'components'
 import { PresetsList } from './PresetsList/PresetsList'
 import { useAppSelector } from 'store'
@@ -17,6 +17,10 @@ export const PresetsModal: FC<PresetsModalProps> = ({ setIsOpenPresets }) => {
 		event.stopPropagation()
 		setIsOpenPresets()
 	}
+
+	useEffect(() => {
+		localStorage.setItem('userPresets', JSON.stringify(userPresets))
+	},[userPresets])
 
 	return (
 		<div className={styles.presetsModal} onClick={(event) => onCloseModal(event)}>
