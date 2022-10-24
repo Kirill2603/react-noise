@@ -14,3 +14,31 @@ body{
 .modalShow {
     @apply overflow-hidden
 }
+
+*::-webkit-scrollbar {
+    @apply w-1
+}
+
+*::-webkit-scrollbar-track {
+    @apply bg-none
+}
+
+*::-webkit-scrollbar-track:hover {
+    @apply bg-none
+}
+
+*::-webkit-scrollbar-track:active {
+    @apply bg-none
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-500
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-700 dark:bg-gray-300
+}
+
+*::-webkit-scrollbar-thumb:active {
+    @apply bg-none
+}
