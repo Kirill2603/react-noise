@@ -3,7 +3,7 @@
 }
 
 .presetsList h3 {
-    @apply text-lg font-bold
+    @apply text-lg font-bold px-2
 }
 
 .presetsList span {
@@ -11,21 +11,25 @@
 }
 
 .preset {
-    @apply flex flex-row justify-between py-2 border-b border-b-gray-600
+    @apply flex flex-row justify-between py-1 my-2 bg-gray-300 rounded-xl
+    hover:bg-gray-600 hover:text-gray-100
 }
 
 .presetTitle {
-    @apply text-2xl font-bold pr-20 sm:p-0 align-middle
+    @apply text-2xl font-bold px-2 pr-20 align-middle sm:p-0
 }
 
 .tracksList {
-    @apply flex flex-row text-xl
+    @apply flex flex-row items-center text-xl
 }
 
 .tracksList li {
     @apply flex flex-row flex-wrap justify-end
 }
 
+.tracksList button {
+    @apply w-fit h-fit px-2 mx-2 rounded-full hover:bg-red-600
+}
 
 .trackTitle {
     @apply font-bold rounded-2xl px-3 py-1 m-1 mx-2 leading-none
