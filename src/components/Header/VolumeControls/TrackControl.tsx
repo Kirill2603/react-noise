@@ -19,8 +19,11 @@ export const TrackControl: FC<TrackCoverProps> = ({ masterVolume, track, isPlay 
 	}
 
 	useEffect(() => {
-		if (isPlay) {
-			audio.play()
+		const playPromise = audio.play()
+		if (isPlay && playPromise !== null) {
+			playPromise.catch(() => {
+				audio.play()
+			})
 		}
 		if (!isPlay) {
 			audio.pause()

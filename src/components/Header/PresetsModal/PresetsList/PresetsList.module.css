@@ -12,6 +12,7 @@
 
 .preset {
     @apply flex flex-row justify-between py-1 my-2 bg-gray-300 rounded-xl
+    dark:bg-gray-600 dark:hover:bg-gray-500
     hover:bg-gray-600 hover:text-gray-100
 }
 
