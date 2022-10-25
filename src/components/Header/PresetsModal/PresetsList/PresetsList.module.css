@@ -14,6 +14,7 @@
     @apply flex flex-row justify-between py-1 my-2 bg-gray-300 rounded-xl
     dark:bg-gray-600 dark:hover:bg-gray-500
     hover:bg-gray-600 hover:text-gray-100
+    hover:fill-red-200
 }
 
 .presetTitle {
@@ -28,8 +29,8 @@
     @apply flex flex-row flex-wrap justify-end
 }
 
-.tracksList button {
-    @apply w-fit h-fit px-2 mx-2 rounded-full hover:bg-red-600
+.tracksList svg {
+    @apply w-6 h-6  mx-2 rounded-full hover:fill-red-500
 }
 
 .trackTitle {

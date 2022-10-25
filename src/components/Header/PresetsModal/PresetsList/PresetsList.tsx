@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { useAppDispatch } from 'store'
 import { deletePreset, setPreset, TrackType } from 'store/playerSlice'
 import styles from './PresetsList.module.css'
+import { ReactComponent as DeleteIcon } from 'assets/deleteIcon.svg'
 
 type PresetListProps = {
 	type: 'user' | 'base'
@@ -21,7 +22,7 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 		dispatch(setPreset(name))
 	}
 
-	const onClickDeletePreset = (event: React.MouseEvent<HTMLButtonElement>, presetName: string) => {
+	const onClickDeletePreset = (event: React.MouseEvent<SVGSVGElement>, presetName: string) => {
 		event.stopPropagation()
 		dispatch(deletePreset({ presetName }))
 	}
@@ -47,7 +48,7 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 							)}
 						</li>
 						{type === 'user' &&
-							<button key={preset + 'delete'} onClick={(event) => onClickDeletePreset(event, preset)}>x</button>}
+							<DeleteIcon key={preset + 'delete'} onClick={(event) => onClickDeletePreset(event, preset)}>x</DeleteIcon>}
 					</div>
 				</ul>)
 			}
