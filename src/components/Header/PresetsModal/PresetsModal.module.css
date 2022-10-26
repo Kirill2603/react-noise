@@ -5,6 +5,7 @@
 
 .modalBody {
     @apply relative w-1/2 h-fit bg-gray-200 opacity-100 rounded-2xl z-20 px-3 my-5
+    md:w-fit sm:h-fit
     sm:w-fit sm:h-fit
     dark:bg-zinc-900
 }

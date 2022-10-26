@@ -59,9 +59,10 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 									)}
 								</li>
 								{type === 'user' &&
-									<DeleteIcon key={preset + 'delete'} onClick={(event) => onClickDeletePreset(event, preset)}>x</DeleteIcon>}
+									<DeleteIcon key={preset + 'delete'}
+															onClick={(event) => onClickDeletePreset(event, preset)}>x</DeleteIcon>}
 							</>
-						:
+							:
 							<div className={styles.deleteConfirm}>
 								<span>Delete preset?</span>
 								<button onClick={(event) => onConfirmDeletePreset(event, preset, true)}>Yes</button>

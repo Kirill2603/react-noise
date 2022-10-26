@@ -1,7 +1,7 @@
 .trackCover {
-    /*@apply w-64 h-64 rounded-3xl overflow-hidden cursor-pointer bg-cover bg-center m-3*/
-    /*sm:w-48 sm:h-48 md:w-44 md:h-44 sm:m-1*/
-    @apply aspect-square bg-cover bg-center rounded-3xl w-full h-full
+    @apply aspect-square w-60 bg-cover bg-center rounded-2xl m-3
+    sm:w-[calc(50%-1.5rem)]
+    md:w-[calc(33%-1.5rem)]
 }
 
 .activeCover {
@@ -9,7 +9,8 @@
 }
 
 .trackText {
-    @apply w-full h-full flex justify-center text-center items-center text-4xl font-bold opacity-80 backdrop-blur-md rounded-3xl
+    @apply w-full h-full flex justify-center text-center items-center text-4xl font-bold
+    opacity-80 backdrop-blur-md rounded-2xl
 }
 
 .activeText {

@@ -43,7 +43,7 @@
 }
 
 .deleteConfirm button {
-    @apply mx-2 px-2 text-zinc-50 bg-red-500 rounded-xl
+    @apply mx-2 px-2 text-zinc-50 bg-red-500 rounded-xl text-base
     hover:bg-red-600
 }
 
