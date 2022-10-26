@@ -12,13 +12,13 @@
 
 .preset {
     @apply flex flex-row justify-between py-1 my-2 bg-gray-300 rounded-xl
-    dark:bg-gray-600 dark:hover:bg-gray-500
-    hover:bg-gray-600 hover:text-gray-100
-    hover:fill-red-200
+    hover:bg-zinc-400
+    hover:fill-red-400
+    dark:bg-zinc-800 dark:hover:bg-zinc-600 dark:fill-zinc-100
 }
 
 .presetTitle {
-    @apply text-2xl font-bold px-2 pr-20 align-middle sm:p-0
+    @apply text-2xl font-bold px-3 pr-10 align-middle
 }
 
 .tracksList {
@@ -34,7 +34,21 @@
 }
 
 .trackTitle {
-    @apply font-bold rounded-2xl px-3 py-1 m-1 mx-2 leading-none
+    @apply font-bold rounded-2xl px-3 py-0.5 m-1 mx-1 leading-none text-shadow-sm shadow-white
+    dark:shadow-black
+}
+
+.deleteConfirm  {
+    @apply text-red-500 font-bold py-1
+}
+
+.deleteConfirm button {
+    @apply mx-2 px-2 text-zinc-50 bg-red-500 rounded-xl
+    hover:bg-red-600
+}
+
+.deleteConfirm span {
+    @apply pr-3
 }
 
 .Cat {

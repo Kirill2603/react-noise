@@ -1,18 +1,23 @@
 .presetsModal {
     @apply absolute top-0 left-0 w-screen h-screen overflow-auto z-30
-    flex flex-col  items-center backdrop-blur-md
+    flex flex-col items-center backdrop-blur-md
 }
 
 .modalBody {
-    @apply relative w-fit h-fit bg-gray-200 opacity-100 rounded-2xl z-20 px-5 my-5
+    @apply relative w-1/2 h-fit bg-gray-200 opacity-100 rounded-2xl z-20 px-3 my-5
     sm:w-fit sm:h-fit
-    dark:bg-gray-800
+    dark:bg-zinc-900
 }
 
 .modalHeader {
-    @apply flex flex-row justify-between align-middle pb-4
+    @apply flex flex-row justify-between align-middle py-1 pb-3
 }
 
 .modalHeader span {
     @apply text-3xl font-bold
+}
+
+.modalHeader button svg {
+    @apply w-6 h-6 fill-zinc-800
+    dark:fill-zinc-100
 }

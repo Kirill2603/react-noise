@@ -3,7 +3,7 @@ import { AddPreset } from 'components'
 import { PresetsList } from './PresetsList/PresetsList'
 import { useAppSelector } from 'store'
 import styles from './PresetsModal.module.css'
-
+import { ReactComponent as DeleteIcon } from '../../../assets/deleteIcon.svg'
 
 type PresetsModalProps = {
 	setIsOpenPresets: () => void
@@ -27,7 +27,9 @@ export const PresetsModal: FC<PresetsModalProps> = ({ setIsOpenPresets }) => {
 			<div className={styles.modalBody} onClick={event => event.stopPropagation()}>
 				<div className={styles.modalHeader}>
 					<span>Presets</span>
-					<button onClick={(event) => onCloseModal(event)}>x</button>
+					<button onClick={(event) => onCloseModal(event)}>
+						<DeleteIcon />
+					</button>
 				</div>
 				<AddPreset />
 				<PresetsList presets={userPresets} type={'user'} />
