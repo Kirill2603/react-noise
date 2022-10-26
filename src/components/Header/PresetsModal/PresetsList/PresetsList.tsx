@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { useAppDispatch } from 'store'
 import { deletePreset, setPreset, TrackType } from 'store/playerSlice'
-import styles from './PresetsList.module.css'
 import { ReactComponent as DeleteIcon } from 'assets/deleteIcon.svg'
+import styles from './PresetsList.module.css'
 
 type PresetListProps = {
 	type: 'user' | 'base'
@@ -11,6 +11,7 @@ type PresetListProps = {
 
 export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 
+	const [deleteConfirm, setDeleteConfirm] = useState<string>('')
 	const dispatch = useAppDispatch()
 	const presetsMap = []
 
@@ -24,7 +25,15 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 
 	const onClickDeletePreset = (event: React.MouseEvent<SVGSVGElement>, presetName: string) => {
 		event.stopPropagation()
-		dispatch(deletePreset({ presetName }))
+		setDeleteConfirm(presetName)
+	}
+
+	const onConfirmDeletePreset = (event: React.MouseEvent<HTMLButtonElement>, presetName: string, confirm: boolean) => {
+		event.stopPropagation()
+		if (confirm) {
+			dispatch(deletePreset({ presetName }))
+		}
+		setDeleteConfirm('')
 	}
 
 	return (
@@ -38,17 +47,27 @@ export const PresetsList: FC<PresetListProps> = ({ type, presets }) => {
 					className={styles.preset}>
 					<h4 className={styles.presetTitle}>{preset}</h4>
 					<div className={styles.tracksList}>
-						<li>
-							{presets[preset].map(track =>
-									<span
-										key={track.title + 'presetTrack'}
-										className={`${styles.trackTitle} ${styles[track.title.split(' ').join('')]}`}>
+						{deleteConfirm !== preset ?
+							<>
+								<li>
+									{presets[preset].map(track =>
+											<span
+												key={track.title + 'presetTrack'}
+												className={`${styles.trackTitle} ${styles[track.title.split(' ').join('')]}`}>
 								{track.title}
 							</span>
-							)}
-						</li>
-						{type === 'user' &&
-							<DeleteIcon key={preset + 'delete'} onClick={(event) => onClickDeletePreset(event, preset)}>x</DeleteIcon>}
+									)}
+								</li>
+								{type === 'user' &&
+									<DeleteIcon key={preset + 'delete'} onClick={(event) => onClickDeletePreset(event, preset)}>x</DeleteIcon>}
+							</>
+						:
+							<div className={styles.deleteConfirm}>
+								<span>Delete preset?</span>
+								<button onClick={(event) => onConfirmDeletePreset(event, preset, true)}>Yes</button>
+								<button onClick={(event) => onConfirmDeletePreset(event, preset, false)}>No</button>
+							</div>
+						}
 					</div>
 				</ul>)
 			}
